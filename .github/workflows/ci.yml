@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    - cron:  '0 0,12 * * *'
+
+jobs:   
+  call-workflow:
+    uses: jectivex/Skiff/.github/workflows/package-ci.yml@main
+
